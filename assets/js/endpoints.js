@@ -49,9 +49,6 @@
     titleCredits(titleId) {
       return `${apiBaseUrl}/titles/${encodeURIComponent(titleId)}/credits`;
     },
-    titleImages(titleId) {
-      return `${apiBaseUrl}/titles/${encodeURIComponent(titleId)}/images`;
-    },
     titleSeasons(titleId) {
       return `${apiBaseUrl}/titles/${encodeURIComponent(titleId)}/seasons`;
     },
@@ -215,16 +212,14 @@
 
   async function getTitleBundle(titleId) {
     const title = await getTitle(titleId);
-    const [creditsPayload, imagesPayload, seasonsPayload] = await Promise.all([
+    const [creditsPayload, seasonsPayload] = await Promise.all([
       fetchJson(urls.titleCredits(titleId)).catch(() => ({ credits: [] })),
-      fetchJson(urls.titleImages(titleId)).catch(() => ({ images: [] })),
       isSeries(title.type) ? fetchJson(urls.titleSeasons(titleId)).catch(() => ({ seasons: [] })) : Promise.resolve({ seasons: [] })
     ]);
 
     return {
       title,
       credits: Array.isArray(creditsPayload.credits) ? creditsPayload.credits : Array.isArray(creditsPayload) ? creditsPayload : [],
-      images: Array.isArray(imagesPayload.images) ? imagesPayload.images : Array.isArray(imagesPayload) ? imagesPayload : [],
       seasons: Array.isArray(seasonsPayload.seasons) ? seasonsPayload.seasons : Array.isArray(seasonsPayload) ? seasonsPayload : []
     };
   }

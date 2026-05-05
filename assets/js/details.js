@@ -26,14 +26,6 @@
     `;
   }
 
-  function pickImages(images, fallback) {
-    const urls = images
-      .map((image) => image.url || image.image?.url || image.primaryImage?.url)
-      .filter(Boolean)
-      .slice(0, 6);
-    return urls.length ? urls : [fallback];
-  }
-
   function metaLine(title) {
     return [
       api.formatType(title.type),
@@ -58,9 +50,8 @@
     const titleId = api.getSelectedTitleId();
     api.saveSelectedTitle(titleId);
     const bundle = await api.getTitleBundle(titleId);
-    const { title, credits, images, seasons } = bundle;
+    const { title, credits, seasons } = bundle;
     const suggestions = await api.getSuggestions(title, 10);
-    const gallery = pickImages(images, api.getImageUrl(title));
     const directors = title.directors.length ? people(title.directors) : people(credits.slice(0, 3));
     const stars = title.stars.length ? people(title.stars) : people(credits.slice(0, 8));
 
@@ -102,15 +93,6 @@
             ${api.isSeries(title.type) ? `<li>${seasons.length} season(s)</li>` : ""}
           </ul>
         </article>
-      </section>
-
-      <section class="rail-section">
-        <div class="section-heading">
-          <h2>Gallery</h2>
-        </div>
-        <div class="gallery-grid">
-          ${gallery.map((url, index) => `<img src="${url}" alt="${api.escapeHtml(`${title.primaryTitle} image ${index + 1}`)}">`).join("")}
-        </div>
       </section>
 
       <section class="rail-section">
