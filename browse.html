@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search | Movies All Night</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="browse">
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">M</span>
+      <span class="brand-text">Movies All Night</span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="browse.html" aria-current="page">Search</a>
+    </nav>
+  </header>
+
+  <main class="page-main browse-page">
+    <section class="browse-hero">
+      <p class="eyebrow">Find something to play</p>
+      <h1>Search movies and series</h1>
+      <form class="browse-search" id="search-form">
+        <label class="sr-only" for="search-input">Search titles</label>
+        <input id="search-input" type="search" placeholder="Search by title">
+        <button class="button button-primary" type="submit">Search</button>
+      </form>
+    </section>
+    <section class="rail-section">
+      <div class="section-heading">
+        <h2 id="results-label">Featured titles</h2>
+        <button class="button button-secondary" type="button" id="reset-search">Reset</button>
+      </div>
+      <div class="catalog-grid" id="catalog-grid"></div>
+    </section>
+  </main>
+
+  <script src="assets/js/endpoints.js"></script>
+  <script src="assets/js/browse.js"></script>
+</body>
+</html>

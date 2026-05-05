@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch | Movies All Night</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="watch">
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">M</span>
+      <span class="brand-text">Movies All Night</span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="browse.html">Search</a>
+    </nav>
+  </header>
+
+  <main class="page-main watch-page">
+    <section class="watch-title" id="watch-header"></section>
+    <section class="player-shell">
+      <iframe
+        id="player-frame"
+        class="player-frame"
+        title="Streaming player"
+        referrerpolicy="no-referrer"
+        allowfullscreen
+        sandbox="allow-scripts allow-same-origin allow-forms allow-presentation">
+      </iframe>
+    </section>
+    <section class="rail-section">
+      <div class="section-heading">
+        <h2>Watch next</h2>
+      </div>
+      <div class="poster-rail" id="watch-suggestions"></div>
+    </section>
+  </main>
+
+  <script src="assets/js/endpoints.js"></script>
+  <script src="assets/js/watch.js"></script>
+</body>
+</html>

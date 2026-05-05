@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movies All Night</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Movies All Night home">
+      <span class="brand-mark">M</span>
+      <span class="brand-text">Movies All Night</span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="browse.html">Search</a>
+      <a href="#movies-row">Movies</a>
+      <a href="#series-row">Series</a>
+    </nav>
+    <form class="nav-search" id="nav-search">
+      <label class="sr-only" for="home-search">Search titles</label>
+      <input id="home-search" type="search" placeholder="Search movies or series">
+      <button type="submit" aria-label="Search">Search</button>
+    </form>
+  </header>
+
+  <main>
+    <section class="home-hero" id="hero">
+      <div class="hero-backdrop"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Tonight's spotlight</p>
+        <h1 id="hero-title">Loading featured title...</h1>
+        <p class="hero-meta" id="hero-meta"></p>
+        <p class="hero-plot" id="hero-plot"></p>
+        <div class="hero-actions">
+          <a class="button button-primary" id="hero-watch" href="watch.html">Play</a>
+          <a class="button button-secondary" id="hero-details" href="details.html">More Info</a>
+        </div>
+      </div>
+      <div class="hero-controls" aria-label="Featured title controls">
+        <button class="hero-control" type="button" id="hero-prev" aria-label="Previous featured title">&lsaquo;</button>
+        <div class="hero-dots" id="hero-dots"></div>
+        <button class="hero-control" type="button" id="hero-next" aria-label="Next featured title">&rsaquo;</button>
+      </div>
+    </section>
+
+    <section class="rail-section hero-picks">
+      <div class="section-heading">
+        <h2>Suggested for you</h2>
+        <div class="rail-controls">
+          <button class="icon-button" type="button" data-scroll-target="featured-track" data-scroll="-1" aria-label="Previous suggestions">&lsaquo;</button>
+          <button class="icon-button" type="button" data-scroll-target="featured-track" data-scroll="1" aria-label="Next suggestions">&rsaquo;</button>
+        </div>
+      </div>
+      <div class="poster-rail" id="featured-track"></div>
+    </section>
+
+    <section class="rail-section" id="movies-row">
+      <div class="section-heading">
+        <h2>Latest movies</h2>
+        <a href="browse.html?type=MOVIE">Explore all</a>
+      </div>
+      <div class="poster-rail" id="movie-track"></div>
+    </section>
+
+    <section class="rail-section" id="series-row">
+      <div class="section-heading">
+        <h2>Latest series</h2>
+        <a href="browse.html?type=TV_SERIES">Explore all</a>
+      </div>
+      <div class="poster-rail" id="series-track"></div>
+    </section>
+
+    <section class="rail-section">
+      <div class="section-heading">
+        <h2>Because you keep watching</h2>
+      </div>
+      <div class="wide-rail" id="mixed-track"></div>
+    </section>
+  </main>
+
+  <script src="assets/js/endpoints.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

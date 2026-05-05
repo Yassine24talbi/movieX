@@ -1,0 +1,333 @@
+baseUrl = https://www.imdb.com
+iframe url = https://www.playimdb.com/{id}
+
+
+Title
+Operations related to titles (movies, TV shows, etc.)
+
+
+
+GET
+/titles "https://api.imdbapi.dev/titles?types=[type]&startYear=[yearstart]&endYear=[yearend]"
+List titles
+
+
+GET
+/titles/{titleId} "https://api.imdbapi.dev/titles/[id]"
+Get title by ID
+
+
+GET
+/titles:batchGet "https://api.imdbapi.dev/titles:batchGet?titleIds=[id]"
+Batch get titles by IDs
+
+
+GET
+/titles/{titleId}/credits  "https://api.imdbapi.dev/titles/[id]/credits"
+List credits for a title
+
+
+GET
+/titles/{titleId}/releaseDates "https://api.imdbapi.dev/titles/[id]/releaseDates"
+List release dates for a title
+
+
+GET
+/titles/{titleId}/akas
+List AKAs for a title
+
+
+GET
+/titles/{titleId}/seasons "https://api.imdbapi.dev/titles/[id]/seasons"
+List seasons for a title
+
+
+GET
+/titles/{titleId}/episodes "https://api.imdbapi.dev/titles/tt26315487/episodes","https://api.imdbapi.dev/titles/[id]/episodes?season=1"
+List episodes for a title
+
+
+GET
+/titles/{titleId}/images "https://api.imdbapi.dev/titles/[id]/images"
+List images for a title
+
+
+GET
+/titles/{titleId}/videos "https://api.imdbapi.dev/titles/[id]/videos"
+List videos for a title
+
+
+GET
+/titles/{titleId}/awardNominations
+List award nominations for a title
+
+
+GET
+/titles/{titleId}/parentsGuide
+List parents guide for a title
+
+
+GET
+/titles/{titleId}/certificates
+List certificates for a title
+
+
+GET
+/titles/{titleId}/companyCredits
+List company credits for a title
+
+
+GET
+/titles/{titleId}/boxOffice
+Get box office information for a title
+
+
+GET
+/search/titles  "https://api.imdbapi.dev/search/titles?query=in%20time"
+Search titles by query
+
+Name
+Operations related to names (actors, directors, etc.)
+
+
+
+GET
+/names/{nameId}
+Get name by ID
+
+
+GET
+/names/{nameId}/images
+List images for a name
+
+
+GET
+/names/{nameId}/filmography
+List filmography for a name
+
+
+GET
+/names/{nameId}/relationships
+List relationships for a name
+
+
+GET
+/names/{nameId}/trivia
+List trivia for a name
+
+
+GET
+/names:batchGet
+Batch get names by IDs
+
+
+GET
+/chart/starmeter
+List star meter rankings
+
+Interest
+Operations related to interests.
+
+
+
+GET
+/interests
+List interest categories
+
+
+GET
+/interests/{interestId}
+Get interest by ID
+
+
+
+
+
+
+search_result = 
+{
+  "titles": [
+    {
+      "id": "",
+      "type": "movie",
+      "primaryTitle": "",
+      "originalTitle": "",
+      "primaryImage": {
+        "url": "",
+        "width": 600,
+        "height": 889
+      },
+      "startYear": 2026
+    },
+]
+}
+
+
+
+
+
+
+
+title_id_resulte = 
+{
+  "id": "tt26315487",
+  "type": "tvSeries",
+  "primaryTitle": "Bloodhounds",
+  "originalTitle": "Sanyanggaedeul",
+  "primaryImage": {
+    "url": "https://m.media-amazon.com/images/M/MV5BYjhjZmYwYjItYjA1Yy00NzkwLTk1OWMtZjYzZTg2MWFiYmFjXkEyXkFqcGc@._V1_.jpg",
+    "width": 1500,
+    "height": 2222
+  },
+  "startYear": 2023,
+  "runtimeSeconds": 3600,
+  "genres": [
+    "Action",
+    "Crime",
+    "Drama",
+    "Sport",
+    "Thriller"
+  ],
+  "rating": {
+    "aggregateRating": 8.2,
+    "voteCount": 27713
+  },
+  "plot": "In order to pay off their debt, three daring youths jump into the money-lending business while confronting the rich and powerful who prey on the weak.",
+  "directors": [
+    {
+      "id": "nm8460699",
+      "displayName": "Kim Joo-hwan",
+      "primaryProfessions": [
+        "actor",
+        "director",
+        "writer"
+      ]
+    }
+  ],
+  "writers": [
+    {
+      "id": "nm15391088",
+      "displayName": "Jeong Chan",
+      "primaryProfessions": [
+        "art_department",
+        "writer"
+      ]
+    },
+    {
+      "id": "nm8460699",
+      "displayName": "Kim Joo-hwan",
+      "primaryProfessions": [
+        "actor",
+        "director",
+        "writer"
+      ]
+    }
+  ],
+  "stars": [
+    {
+      "id": "nm7927575",
+      "displayName": "Woo Do-Hwan",
+      "primaryImage": {
+        "url": "https://m.media-amazon.com/images/M/MV5BZDAwNDg1OGItZDU2Mi00NTFiLWJhNTYtOGY1NjdjOTkxZGE2XkEyXkFqcGc@._V1_.jpg",
+        "width": 3500,
+        "height": 2333
+      },
+      "primaryProfessions": [
+        "actor"
+      ]
+    },
+    {
+      "id": "nm9948498",
+      "displayName": "Lee Sang-yi",
+      "primaryImage": {
+        "url": "https://m.media-amazon.com/images/M/MV5BMWY4OTdhM2QtZmYyZC00MmE0LWJhNjItODZjYjNlYjViYTI4XkEyXkFqcGc@._V1_.jpg",
+        "width": 1500,
+        "height": 2000
+      },
+      "primaryProfessions": [
+        "actor"
+      ]
+    },
+    {
+      "id": "nm0401135",
+      "displayName": "Huh Joon-ho",
+      "alternativeNames": [
+        "Jun-Ho Heo",
+        "Jun-Ho Hhuh",
+        "Jun Ho Hu",
+        "Jun-Ho Huh",
+        "Joon-Ho Hur",
+        "Joon-ho Hur",
+        "Heo Jun-ho",
+        "Huh Jun-ho"
+      ],
+      "primaryImage": {
+        "url": "https://m.media-amazon.com/images/M/MV5BZGJjOTc0N2YtZTdmOC00Nzk2LWEwYjgtMDY0OTE3YjM2NTgzXkEyXkFqcGc@._V1_.jpg",
+        "width": 702,
+        "height": 883
+      },
+      "primaryProfessions": [
+        "actor"
+      ]
+    },
+    {
+      "id": "nm3663864",
+      "displayName": "Park Sung-woong",
+      "alternativeNames": [
+        "Sung Woong Park"
+      ],
+      "primaryImage": {
+        "url": "https://m.media-amazon.com/images/M/MV5BNzU2NDYxMjktY2RhMy00NjIyLWFmODgtZjg2NGZjY2EyYjQzXkEyXkFqcGc@._V1_.jpg",
+        "width": 979,
+        "height": 653
+      },
+      "primaryProfessions": [
+        "actor"
+      ]
+    }
+  ],
+  "originCountries": [
+    {
+      "code": "KR",
+      "name": "Republic of Korea"
+    }
+  ],
+  "spokenLanguages": [
+    {
+      "code": "kor",
+      "name": "Korean"
+    }
+  ],
+  "interests": [
+    {
+      "id": "in0000001",
+      "name": "Action"
+    },
+    {
+      "id": "in0000052",
+      "name": "Crime"
+    },
+    {
+      "id": "in0000076",
+      "name": "Drama"
+    },
+    {
+      "id": "in0000090",
+      "name": "Tragedy",
+      "isSubgenre": true
+    },
+    {
+      "id": "in0000174",
+      "name": "Sport"
+    },
+    {
+      "id": "in0000186",
+      "name": "Thriller"
+    },
+    {
+      "id": "in0000209",
+      "name": "Korean Drama",
+      "isSubgenre": true
+    }
+  ]
+}
