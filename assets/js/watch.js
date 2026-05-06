@@ -44,7 +44,7 @@
         <h1>${api.escapeHtml(title.primaryTitle)}</h1>
         <p>${api.escapeHtml([api.formatType(title.type), title.startYear || "N/A", api.formatRuntime(title.runtimeSeconds)].join("  |  "))}</p>
       </div>
-      <a class="button button-secondary" href="details.html?id=${api.escapeHtml(title.id)}">Details</a>
+      <a class="button button-secondary" href="/details/?id=${api.escapeHtml(title.id)}">Details</a>
     `;
 
     frame.src = api.urls.watchUrl(title.id);

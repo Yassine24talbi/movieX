@@ -235,7 +235,7 @@
 
   function buildWatchPageUrl(title) {
     const params = new URLSearchParams({ id: title.id });
-    return `watch.html?${params.toString()}`;
+    return `/watch/?${params.toString()}`;
   }
 
   function saveSelectedTitle(titleId) {

@@ -279,7 +279,7 @@
       params.set("episode", String(episodeNumber));
     }
 
-    return `watch.html?${params.toString()}`;
+    return `/watch/?${params.toString()}`;
   }
 
   function saveSelectedTitle(titleId) {

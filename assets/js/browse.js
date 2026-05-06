@@ -9,7 +9,7 @@
   function cardTemplate(title) {
     return `
       <article class="poster-card">
-        <a href="details.html?id=${api.escapeHtml(title.id)}" data-title-id="${api.escapeHtml(title.id)}">
+        <a href="/details/?id=${api.escapeHtml(title.id)}" data-title-id="${api.escapeHtml(title.id)}">
           <img src="${api.getImageUrl(title)}" alt="${api.escapeHtml(title.primaryTitle)}">
           <span class="poster-gradient"></span>
           <span class="poster-badge">${api.escapeHtml(api.formatType(title.type))}</span>
@@ -50,13 +50,13 @@
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     const query = input.value.trim();
-    window.history.replaceState({}, "", query ? `browse.html?q=${encodeURIComponent(query)}` : "browse.html");
+    window.history.replaceState({}, "", query ? `/browse/?q=${encodeURIComponent(query)}` : "/browse/");
     render(query);
   });
 
   reset.addEventListener("click", () => {
     input.value = "";
-    window.history.replaceState({}, "", "browse.html");
+    window.history.replaceState({}, "", "/browse/");
     render("");
   });
 

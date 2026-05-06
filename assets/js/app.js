@@ -33,7 +33,7 @@
   function cardTemplate(title) {
     return `
       <article class="poster-card">
-        <a href="details.html?id=${api.escapeHtml(title.id)}" data-title-id="${api.escapeHtml(title.id)}">
+        <a href="/details/?id=${api.escapeHtml(title.id)}" data-title-id="${api.escapeHtml(title.id)}">
           <img src="${api.getImageUrl(title)}" alt="${api.escapeHtml(title.primaryTitle)}">
           <span class="poster-gradient"></span>
           <span class="poster-badge">${api.escapeHtml(api.formatType(title.type))}</span>
@@ -50,7 +50,7 @@
   function wideCardTemplate(title) {
     return `
       <article class="wide-card">
-        <a href="details.html?id=${api.escapeHtml(title.id)}" data-title-id="${api.escapeHtml(title.id)}">
+        <a href="/details/?id=${api.escapeHtml(title.id)}" data-title-id="${api.escapeHtml(title.id)}">
           <img src="${api.getImageUrl(title)}" alt="${api.escapeHtml(title.primaryTitle)}">
           <div>
             <p>${api.escapeHtml(api.formatType(title.type))}</p>
@@ -78,7 +78,7 @@
       heroPlot.textContent = title.plot;
       heroBackdrop.style.backgroundImage = `url("${api.getImageUrl(title)}")`;
       heroWatch.href = api.buildWatchPageUrl(title);
-      heroDetails.href = `details.html?id=${encodeURIComponent(title.id)}`;
+      heroDetails.href = `/details/?id=${encodeURIComponent(title.id)}`;
       renderHeroDots();
 
       window.requestAnimationFrame(() => {
@@ -149,7 +149,7 @@
       event.preventDefault();
       const query = searchInput.value.trim();
       if (query) {
-        window.location.href = `browse.html?q=${encodeURIComponent(query)}`;
+        window.location.href = `/browse/?q=${encodeURIComponent(query)}`;
       }
     });
   }

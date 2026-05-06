@@ -18,8 +18,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="icon" href="icon.ico">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="icon" href="/icon.ico">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -31,13 +31,13 @@
 </head>
 <body data-page="home">
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="MovieX">
+    <a class="brand" href="/" aria-label="MovieX">
       <span class="brand-mark">M</span>
       <span class="brand-text">MovieX</span>
     </a>
     <nav class="main-nav" aria-label="Main navigation">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="browse.html">Search</a>
+      <a href="/" aria-current="page">Home</a>
+      <a href="/browse/">Search</a>
       <a href="#movies-row">Movies</a>
       <a href="#series-row">Series</a>
     </nav>
@@ -58,8 +58,8 @@
         <p class="hero-meta" id="hero-meta"></p>
         <p class="hero-plot" id="hero-plot"></p>
         <div class="hero-actions">
-          <a class="button button-primary" id="hero-watch" href="watch.html">Play</a>
-          <a class="button button-secondary" id="hero-details" href="details.html">More Info</a>
+          <a class="button button-primary" id="hero-watch" href="/watch/">Play</a>
+          <a class="button button-secondary" id="hero-details" href="/details/">More Info</a>
         </div>
       </div>
       <div class="hero-controls" aria-label="Featured title controls">
@@ -83,7 +83,7 @@
     <section class="rail-section" id="movies-row">
       <div class="section-heading">
         <h2>Latest movies</h2>
-        <a href="browse.html?type=MOVIE">Explore all</a>
+        <a href="/browse/?type=MOVIE">Explore all</a>
       </div>
       <div class="poster-rail" id="movie-track"></div>
     </section>
@@ -91,7 +91,7 @@
     <section class="rail-section" id="series-row">
       <div class="section-heading">
         <h2>Latest series</h2>
-        <a href="browse.html?type=TV_SERIES">Explore all</a>
+        <a href="/browse/?type=TV_SERIES">Explore all</a>
       </div>
       <div class="poster-rail" id="series-track"></div>
     </section>
@@ -104,7 +104,7 @@
     </section>
   </main>
 
-  <script src="assets/js/endpoints.js"></script>
-  <script src="assets/js/app.js"></script>
+  <script src="/assets/js/endpoints.js"></script>
+  <script src="/assets/js/app.js"></script>
 </body>
 </html>

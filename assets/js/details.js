@@ -13,7 +13,7 @@
   function cardTemplate(title) {
     return `
       <article class="poster-card">
-        <a href="details.html?id=${api.escapeHtml(title.id)}" data-title-id="${api.escapeHtml(title.id)}">
+        <a href="/details/?id=${api.escapeHtml(title.id)}" data-title-id="${api.escapeHtml(title.id)}">
           <img src="${api.getImageUrl(title)}" alt="${api.escapeHtml(title.primaryTitle)}">
           <span class="poster-gradient"></span>
           <span class="poster-play">Open</span>
@@ -68,7 +68,7 @@
           <ul class="pill-list">${list(title.genres)}</ul>
           <div class="hero-actions">
             <a class="button button-primary" href="${api.buildWatchPageUrl(title)}">Play</a>
-            <a class="button button-secondary" href="browse.html">Search more</a>
+            <a class="button button-secondary" href="/browse/">Search more</a>
           </div>
         </div>
       </section>
