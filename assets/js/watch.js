@@ -20,6 +20,28 @@
     `;
   }
 
+  function setMeta(selector, attribute, value) {
+    const element = document.querySelector(selector);
+    if (element) {
+      element.setAttribute(attribute, value);
+    }
+  }
+
+  function setWatchSeo(title) {
+    const year = title.startYear || "N/A";
+    const pageTitle = `${title.primaryTitle} (${year}) - Watch Online | MovieX`;
+    const description = `${title.primaryTitle} (${year}) streaming, cast, rating, trailer and details on MovieX.`;
+    const canonicalUrl = `https://moviex.buzz/watch/?id=${encodeURIComponent(title.id)}`;
+
+    document.title = pageTitle;
+    setMeta('meta[name="description"]', "content", description);
+    setMeta('meta[property="og:description"]', "content", "Watch movies and series online");
+    setMeta('meta[property="og:url"]', "content", canonicalUrl);
+    setMeta('meta[name="twitter:title"]', "content", pageTitle);
+    setMeta('meta[name="twitter:description"]', "content", description);
+    setMeta('link[rel="canonical"]', "href", canonicalUrl);
+  }
+
   function attachSuggestions() {
     suggestionsRoot.querySelectorAll("[data-title-id]").forEach((link) => {
       link.addEventListener("click", () => api.saveSelectedTitle(link.dataset.titleId));
@@ -37,6 +59,7 @@
     const bundle = await api.getTitleBundle(titleId);
     const { title } = bundle;
     const suggestions = await api.getSuggestions(title, 10);
+    setWatchSeo(title);
 
     header.innerHTML = `
       <div>
