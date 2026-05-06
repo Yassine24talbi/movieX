@@ -10,7 +10,7 @@
     return `
       <article class="poster-card">
         <a href="/details/?id=${api.escapeHtml(title.id)}" data-title-id="${api.escapeHtml(title.id)}">
-          <img src="${api.getImageUrl(title)}" alt="${api.escapeHtml(title.primaryTitle)}">
+          <img src="${api.getImageUrl(title)}" alt="${api.escapeHtml(title.primaryTitle)}" loading="lazy" decoding="async">
           <span class="poster-gradient"></span>
           <span class="poster-badge">${api.escapeHtml(api.formatType(title.type))}</span>
           <span class="poster-play">Open</span>
@@ -38,7 +38,7 @@
     label.textContent = query ? `Searching "${query}"...` : "Featured titles";
     const titles = query
       ? await api.searchTitles(query)
-      : await api.getRandomTitles(new URLSearchParams(window.location.search).get("type") || "MOVIE", 2026, 20);
+      : await api.getRandomTitles(new URLSearchParams(window.location.search).get("type") || "MOVIE", 2026, 16);
 
     label.textContent = query ? `Results for "${query}"` : "Featured titles";
     grid.innerHTML = titles.length

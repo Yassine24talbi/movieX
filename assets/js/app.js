@@ -34,7 +34,7 @@
     return `
       <article class="poster-card">
         <a href="/details/?id=${api.escapeHtml(title.id)}" data-title-id="${api.escapeHtml(title.id)}">
-          <img src="${api.getImageUrl(title)}" alt="${api.escapeHtml(title.primaryTitle)}">
+          <img src="${api.getImageUrl(title)}" alt="${api.escapeHtml(title.primaryTitle)}" loading="lazy" decoding="async">
           <span class="poster-gradient"></span>
           <span class="poster-badge">${api.escapeHtml(api.formatType(title.type))}</span>
           <span class="poster-play">Play</span>
@@ -51,7 +51,7 @@
     return `
       <article class="wide-card">
         <a href="/details/?id=${api.escapeHtml(title.id)}" data-title-id="${api.escapeHtml(title.id)}">
-          <img src="${api.getImageUrl(title)}" alt="${api.escapeHtml(title.primaryTitle)}">
+          <img src="${api.getImageUrl(title)}" alt="${api.escapeHtml(title.primaryTitle)}" loading="lazy" decoding="async">
           <div>
             <p>${api.escapeHtml(api.formatType(title.type))}</p>
             <h3>${api.escapeHtml(title.primaryTitle)}</h3>
@@ -171,10 +171,10 @@
     renderSkeleton(seriesTrack, 10);
     renderSkeleton(mixedTrack, 5, true);
 
-    const [movies, series] = await Promise.all([
-      api.getRandomTitles("MOVIE", 2026, 18),
-      api.getRandomTitles("TV_SERIES", 2026, 18)
-    ]);
+    const [movies, series] = await Promise.allSettled([
+      api.getRandomTitles("MOVIE", 2026, 12),
+      api.getRandomTitles("TV_SERIES", 2026, 12)
+    ]).then((results) => results.map((result) => (result.status === "fulfilled" ? result.value : [])));
     const mixed = [...movies.slice(0, 8), ...series.slice(0, 8)].sort(() => Math.random() - 0.5);
 
     heroItems = mixed.slice(0, 6);

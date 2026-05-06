@@ -14,7 +14,7 @@
     return `
       <article class="poster-card">
         <a href="/details/?id=${api.escapeHtml(title.id)}" data-title-id="${api.escapeHtml(title.id)}">
-          <img src="${api.getImageUrl(title)}" alt="${api.escapeHtml(title.primaryTitle)}">
+          <img src="${api.getImageUrl(title)}" alt="${api.escapeHtml(title.primaryTitle)}" loading="lazy" decoding="async">
           <span class="poster-gradient"></span>
           <span class="poster-play">Open</span>
           <span class="poster-copy">
@@ -81,7 +81,7 @@
     root.innerHTML = `
       <section class="detail-hero">
         <div class="detail-poster">
-          <img src="${api.getImageUrl(title)}" alt="${api.escapeHtml(title.primaryTitle)}">
+          <img src="${api.getImageUrl(title)}" alt="${api.escapeHtml(title.primaryTitle)}" loading="eager" decoding="async" fetchpriority="high">
         </div>
         <div class="detail-copy">
           <p class="eyebrow">Title details</p>

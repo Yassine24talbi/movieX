@@ -8,7 +8,7 @@
     return `
       <article class="poster-card">
         <a href="${api.buildWatchPageUrl(title)}" data-title-id="${api.escapeHtml(title.id)}">
-          <img src="${api.getImageUrl(title)}" alt="${api.escapeHtml(title.primaryTitle)}">
+          <img src="${api.getImageUrl(title)}" alt="${api.escapeHtml(title.primaryTitle)}" loading="lazy" decoding="async">
           <span class="poster-gradient"></span>
           <span class="poster-play">Play</span>
           <span class="poster-copy">
