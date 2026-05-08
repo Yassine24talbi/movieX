@@ -42,13 +42,29 @@
 
   <main class="page-main watch-page">
     <section class="watch-title" id="watch-header"></section>
+    <section class="episode-panel" id="series-controller" hidden>
+      <label>
+        <span>Season</span>
+        <select id="season-select"></select>
+      </label>
+      <label>
+        <span>Episode</span>
+        <select id="episode-select"></select>
+      </label>
+      <div class="episode-actions" aria-label="Episode navigation">
+        <button class="episode-button" type="button" id="episode-prev">Previous episode</button>
+        <button class="episode-button" type="button" id="episode-next">Next episode</button>
+      </div>
+    </section>
     <section class="player-shell">
       <iframe
         id="player-frame"
         class="player-frame"
         title="Streaming player"
         referrerpolicy="no-referrer"
-        allowfullscreen>
+        allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+        allowfullscreen
+        sandbox="allow-scripts allow-same-origin allow-forms allow-presentation">
       </iframe>
     </section>
     <section class="rail-section">

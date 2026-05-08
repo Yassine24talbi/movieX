@@ -1,6 +1,6 @@
 (function () {
   const apiBaseUrl = "https://api.imdbapi.dev";
-  const playerBaseUrl = "https://www.playimdb.com";
+  const playerBaseUrl = "https://vaplayer.ru/embed";
   const imageFallback =
     "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 1200'%3E%3Crect width='800' height='1200' fill='%23101014'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23f4f4f5' font-family='Arial, sans-serif' font-size='42'%3ENo%20Poster%3C/text%3E%3C/svg%3E";
 
@@ -56,8 +56,12 @@
       const params = season ? `?season=${encodeURIComponent(String(season))}` : "";
       return `${apiBaseUrl}/titles/${encodeURIComponent(titleId)}/episodes${params}`;
     },
-    watchUrl(titleId) {
-      return `${playerBaseUrl}/${encodeURIComponent(titleId)}`;
+    watchUrl(titleId, type = "movie", season, episode) {
+      if (isSeries(type)) {
+        return `${playerBaseUrl}/tv/${encodeURIComponent(titleId)}/${encodeURIComponent(String(season || 1))}/${encodeURIComponent(String(episode || 1))}`;
+      }
+
+      return `${playerBaseUrl}/movie/${encodeURIComponent(titleId)}`;
     }
   };
 
@@ -233,8 +237,12 @@
     }
   }
 
-  function buildWatchPageUrl(title) {
+  function buildWatchPageUrl(title, season, episode) {
     const params = new URLSearchParams({ id: title.id });
+    if (isSeries(title.type)) {
+      params.set("season", String(season || 1));
+      params.set("episode", String(episode || 1));
+    }
     return `/watch/?${params.toString()}`;
   }
 

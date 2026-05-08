@@ -13,6 +13,9 @@
   const mixedTrack = document.getElementById("mixed-track");
   const searchForm = document.getElementById("nav-search");
   const searchInput = document.getElementById("home-search");
+  const siteHeader = document.querySelector(".site-header");
+  const mobileSearchOpen = document.getElementById("mobile-search-open");
+  const mobileSearchClose = document.getElementById("mobile-search-close");
   const heroPrev = document.getElementById("hero-prev");
   const heroNext = document.getElementById("hero-next");
   const heroDots = document.getElementById("hero-dots");
@@ -151,6 +154,17 @@
       if (query) {
         window.location.href = `/browse/?q=${encodeURIComponent(query)}`;
       }
+    });
+
+    mobileSearchOpen?.addEventListener("click", () => {
+      siteHeader.classList.add("is-searching");
+      window.setTimeout(() => searchInput.focus(), 80);
+    });
+
+    mobileSearchClose?.addEventListener("click", () => {
+      siteHeader.classList.remove("is-searching");
+      searchInput.value = "";
+      mobileSearchOpen?.focus();
     });
   }
 
