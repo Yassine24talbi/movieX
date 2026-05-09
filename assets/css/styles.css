@@ -787,36 +787,6 @@ h2 {
   color: var(--text);
 }
 
-.episode-actions {
-  grid-column: 1 / -1;
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-}
-
-.episode-button {
-  min-height: 44px;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  padding: 0 16px;
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--text);
-  cursor: pointer;
-  font-weight: 800;
-  transition: transform 220ms var(--ease-smooth), background 220ms var(--ease-smooth), border-color 220ms var(--ease-smooth), opacity 220ms var(--ease-smooth);
-}
-
-.episode-button:hover:not(:disabled) {
-  transform: translateY(-1px);
-  border-color: rgba(255, 255, 255, 0.28);
-  background: rgba(47, 125, 255, 0.24);
-}
-
-.episode-button:disabled {
-  cursor: not-allowed;
-  opacity: 0.45;
-}
-
 .player-shell {
   padding: 14px;
   border-radius: 8px;
@@ -1249,14 +1219,6 @@ h2 {
     grid-template-columns: 1fr;
     padding: 14px;
     border-radius: 12px;
-  }
-
-  .episode-actions {
-    flex-direction: column;
-  }
-
-  .episode-button {
-    width: 100%;
   }
 
   .player-shell {
